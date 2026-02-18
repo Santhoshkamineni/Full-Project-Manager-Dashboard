@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Manager Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Manager</h2>
+    <button onclick="show('dashboard')">Dashboard</button>
+    <button onclick="show('tasks')">Tasks</button>
+    <button onclick="show('team')">Team</button>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+
+    <div class="topbar">
+      <h1 id="title">Dashboard</h1>
+      <span>Welcome Back</span>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="section active">
+      <div class="cards">
+        <div class="card">Projects: <span id="projectCount">1</span></div>
+        <div class="card">Tasks: <span id="taskCount">0</span></div>
+        <div class="card">Team Members: <span id="teamCount">0</span></div>
+      </div>
+    </div>
+
+    <!-- Tasks -->
+    <div id="tasks" class="section">
+      <h2>Add Task</h2>
+      <input id="taskInput" placeholder="Task name" />
+      <select id="statusSelect">
+        <option>Pending</option>
+        <option>Done</option>
+      </select>
+      <button class="btn" onclick="addTask()">Add</button>
+
+      <div id="taskList" class="list"></div>
+    </div>
+
+    <!-- Team -->
+    <div id="team" class="section">
+      <h2>Add Team Member</h2>
+      <input id="memberInput" placeholder="Member name" />
+      <button class="btn" onclick="addMember()">Add</button>
+
+      <div id="memberList" class="list"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
